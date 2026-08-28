@@ -3,6 +3,8 @@ import { OPTIONS, WINNER_COMBOS } from "./constants";
 import { useState } from "react";
 
 function App() {
+  const [turno, setTurno] = useState(true);
+
   const [board, setBoard] = useState({
     player1: OPTIONS.Nothing,
     player2: OPTIONS.Nothing,
@@ -21,12 +23,15 @@ function App() {
   };
 
   const handleClickOption = (option) => {
-    const newBoard = {
-      player1: option,
-      player2: getRandomOption(),
-    };
-    setBoard(newBoard);
-    verifyWinner(newBoard);
+    if (turno) {
+      const newBoard = {
+        player1: option,
+        player2: getRandomOption(),
+      };
+      setBoard(newBoard);
+      setTurno(false);
+      verifyWinner(newBoard);
+    }
   };
 
   const wipeBoard = () => {
@@ -34,6 +39,7 @@ function App() {
       player1: OPTIONS.Nothing,
       player2: OPTIONS.Nothing,
     });
+    setTurno(true);
   };
 
   const verifyWinner = async (board) => {
