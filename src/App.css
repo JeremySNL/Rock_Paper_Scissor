@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fuente: sans-serif;
+  --color-primary: white;
+}
+
+h1,
+h2,
+h3,
+button,
+p,
+span {
+  font-family: var(--fuente);
+}
+
+#root {
+  background-color: #0a0a0a;
+}
+
+.container {
+  height: 100vh;
+}
+
+.title {
+  height: 10vh;
+  color: var(--color-primary);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  gap: 50px;
+  padding: 1rem;
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 30vh;
+  gap: 20px;
+  padding: 1rem;
+}
+
+.option {
+  background-color: black;
+  color: white;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 30px;
+  border: 1px solid #fafafa;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #60cdff;
+}
+
+.option-square {
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  border-radius: 30px;
+  border: 1px solid #fafafa;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4rem;
+  user-select: none;
+}
+
+.player-square {
+  width: 250px;
+  height: 350px;
+  padding: 20px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-title {
+  color: white;
+  font-size: 2rem;
+}
+
+.player-score {
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.btn-restart {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #0a0a0a;
+  border: 1px solid #fafafa;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
